@@ -1,0 +1,7 @@
+@import '../../wasser';
+
+body {
+  @include wasser(padding, 50);
+
+  margin: 0;
+}

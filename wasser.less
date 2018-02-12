@@ -1,0 +1,10 @@
+@wasser-viewport-min:                   320;
+@wasser-viewport-max:                   1500;
+@wasser-scaling-factor:                 1.5;
+@wasser-scaling-factor-font-size:       1.2;
+@wasser-scaling-factor-line-height:     1.5;
+@wasser-rem-factor:                     16;
+
+.wasser(@property, @max, @min: @max / @wasser-scaling-factor) {
+	@{property}: ~"@{max}px";
+}

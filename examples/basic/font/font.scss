@@ -1,0 +1,17 @@
+@import '../../../wasser';
+
+.t-title {
+  @include w-font(40);
+}
+
+.t-heading {
+  @include w-font(30);
+}
+
+.t-subheading {
+  @include w-font(25);
+}
+
+.t-text {
+  @include w-font(16);
+}

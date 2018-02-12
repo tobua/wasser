@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M239.5,158.5 L239.5,478.5" id="Line" stroke="#979797" stroke-width="5" stroke-linecap="square"></path>
+        <path d="M701.5,158.5 L701.5,478.5" id="Line" stroke="#979797" stroke-width="5" stroke-linecap="square"></path>
+        <text id="Mobile" font-family="HelveticaNeue, Helvetica Neue" font-size="36" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="186.658" y="129">Mobile</tspan>
+        </text>
+        <text id="Desktop" font-family="HelveticaNeue, Helvetica Neue" font-size="36" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="635.394" y="129">Desktop</tspan>
+        </text>
+        <path d="M241.5,425.5 L697.5,214.5" id="Line-2" stroke="#0087FF" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M700.5,214.5 L768.5,214.5" id="Line-3" stroke="#0043FF" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M172.5,425.5 L240.5,425.5" id="Line-3" stroke="#0087FF" stroke-width="3" stroke-linecap="square"></path>
+        <text id="320" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="220.734" y="76">320</tspan>
+        </text>
+        <text id="1500" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="673.812" y="76">1500</tspan>
+        </text>
+        <text id="viewport-px" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#848484">
+            <tspan x="415.098" y="76">viewport px</tspan>
+        </text>
+        <text id="$wasser-viewport-min" font-family="HelveticaNeue, Helvetica Neue" font-size="18" font-weight="normal" fill="#FFB600">
+            <tspan x="150.342" y="42">$wasser-viewport-min</tspan>
+        </text>
+        <text id="$wasser-viewport-max" font-family="HelveticaNeue, Helvetica Neue" font-size="18" font-weight="normal" fill="#FFB600">
+            <tspan x="605.849" y="42">$wasser-viewport-max</tspan>
+        </text>
+        <text id="$wasser-scaling-rati" font-family="HelveticaNeue, Helvetica Neue" font-size="18" font-weight="normal" letter-spacing="-0.5" fill="#FFB600">
+            <tspan x="13.343" y="299">$wasser-scaling-rati</tspan>
+            <tspan x="165.325" y="299">o</tspan>
+        </text>
+        <text id="wasser(width,30,15)" transform="translate(474.664745, 354.729809) rotate(-26.000000) translate(-474.664745, -354.729809) " font-family="Monaco" font-size="18" font-weight="normal" letter-spacing="1" fill="#0087FF">
+            <tspan x="363.798045" y="358.729809">wasser(width,30,15</tspan>
+            <tspan x="576.229686" y="358.729809" letter-spacing="-1.5">)</tspan>
+        </text>
+        <text id="wasser(width,30)" transform="translate(453.296047, 263.607020) rotate(-17.000000) translate(-453.296047, -263.607020) " font-family="Monaco" font-size="18" font-weight="normal" letter-spacing="1" fill="#0043FF">
+            <tspan x="360.131984" y="267.60702">wasser(width,30</tspan>
+            <tspan x="537.158351" y="267.60702" letter-spacing="-1.5">)</tspan>
+        </text>
+        <path d="M193.5,305.5 L193.5,217.5" id="Line-4" stroke="#CECECE" fill="#CECECE" stroke-linecap="square"></path>
+        <path id="Line-4-decoration-1" d="M193.5,217.5 L190.5,228.3 L196.5,228.3 L193.5,217.5 Z" stroke="#CECECE" fill="#CECECE" stroke-linecap="square"></path>
+        <path d="M193.29244,296.5 L193.29244,360.5" id="Line-4" stroke="#CECECE" fill="#CECECE" stroke-linecap="square"></path>
+        <path id="Line-4-decoration-1" d="M193.29244,360.5 L196.29244,349.7 L190.29244,349.7 L193.29244,360.5 Z" stroke="#CECECE" fill="#CECECE" stroke-linecap="square"></path>
+        <path d="M243,362.2 L698.5,214.5" id="Line-2" stroke="#0043FF" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M171.5,362.5 L240.5,362.5" id="Line-3" stroke="#0043FF" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M169.5,214.5 L237.5,214.5" id="Line-3" stroke="#979797" stroke-width="3" stroke-linecap="square"></path>
+        <text id="width:-40px" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="47.074" y="222">width: 40px</tspan>
+        </text>
+        <text id="width:-20px" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="47.074" y="369">width: 20px</tspan>
+        </text>
+        <text id="width:-15px" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="47.074" y="433">width: 15px</tspan>
+        </text>
+        <text id="1.5" font-family="HelveticaNeue, Helvetica Neue" font-size="24" font-weight="normal" letter-spacing="-1.5" fill="#000000">
+            <tspan x="203.07" y="301">1.5</tspan>
+        </text>
+        <path d="M700.5,214.5 L768.5,214.5" id="Line-3" stroke="#0043FF" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M699.75,215.3 L769.25,215.3" id="Line-3" stroke="#0087FF" stroke-width="1.5" stroke-linecap="square"></path>
+        <path d="M672.5,224.5 L698.5,215.5" id="Line-3" stroke="#0087FF" stroke-width="1.5" stroke-linecap="square"></path>
+    </g>
+</svg>

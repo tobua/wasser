@@ -1,0 +1,11 @@
+@import '../../../wasser';
+
+body {
+  @include wasser(margin, 40);
+}
+
+.inner {
+  @include wasser(padding, 20, 5);
+
+  background: lightgray;
+}

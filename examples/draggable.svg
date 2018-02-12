@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="75px" viewBox="0 0 75 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Hand" transform="translate(32.000000, 13.000000)" stroke="#000000" stroke-width="2">
+            <path d="M7.312,24.432 L5,24.432 C1.625,24.432 0,27.682 0,29.932 C0,32.182 0,32.307 0,35.182 C0,45.182 10,50.932 10,50.932 L10,53.515" id="Shape"></path>
+            <path d="M13.833,24.432 L13.833,3.766 C13.833,2.063 12.453,0.683 10.75,0.683 C9.047,0.683 7.667,2.063 7.667,3.766 L7.667,32.433" id="Shape"></path>
+            <path d="M20,25.682 L20,16.432 C20,14.729 18.62,13.349 16.917,13.349 C15.214,13.349 13.834,14.729 13.834,16.432 L13.834,22.182" id="Shape"></path>
+            <path d="M26.167,27.349 L26.167,18.099 C26.167,16.396 24.787,15.016 23.084,15.016 C21.381,15.016 20.001,16.396 20.001,18.099 L20.001,23.849" id="Shape"></path>
+            <path d="M26.167,27.099 L26.167,21.349 C26.167,19.646 27.547,18.266 29.25,18.266 C30.953,18.266 32.333,19.646 32.333,21.349 L32.333,30.599 C32.333,30.599 32.333,33.432 32.333,35.682 C32.333,37.932 31.75,46.682 27.583,50.932 L27.583,53.515" id="Shape"></path>
+        </g>
+        <g id="Arrow" transform="translate(9.000000, 16.000000)" stroke="#000000" stroke-width="2">
+            <path d="M11.283,4.5 L0.914,4.5" id="Shape"></path>
+            <polyline id="Shape" points="4.674 8.917 0.257 4.5 4.737 0.021"></polyline>
+        </g>
+        <g id="Arrow-Right" transform="translate(26.000000, 20.500000) rotate(180.000000) translate(-26.000000, -20.500000) translate(20.000000, 16.000000)" stroke="#000000" stroke-width="2">
+            <path d="M11.283,4.5 L0.914,4.5" id="Shape"></path>
+            <polyline id="Shape" points="4.674 8.917 0.257 4.5 4.737 0.021"></polyline>
+        </g>
+    </g>
+</svg>
