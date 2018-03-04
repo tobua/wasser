@@ -1,5 +1,17 @@
-@import '../../wasser.less';
+@import '../../wasser';
+
+@wasser-scaling-ratio:    2;
+@wasser-viewport-min:     500;
 
 body {
   .wasser(padding, 40);
+}
+
+h1 {
+  .w-font(40, 10);
+  .wasser(padding, 5);
+  .wasser(border-width, 10);
+
+  border-style: solid;
+  border-color: lightblue;
 }

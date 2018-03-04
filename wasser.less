@@ -1,10 +1,56 @@
-@wasser-viewport-min:                   320;
-@wasser-viewport-max:                   1500;
-@wasser-scaling-factor:                 1.5;
-@wasser-scaling-factor-font-size:       1.2;
-@wasser-scaling-factor-line-height:     1.5;
-@wasser-rem-factor:                     16;
+@wasser-viewport-min:                   	320;
+@wasser-viewport-max:                   	1500;
+@wasser-scaling-ratio:                 		1.5;
+@wasser-scaling-ratio-font:       				1.25;
+@wasser-font-size-to-line-height-ratio: 	@wasser-scaling-ratio;
+@wasser-rem-factor:                     	16;
 
-.wasser(@property, @max, @min: @max / @wasser-scaling-factor) {
-	@{property}: ~"@{max}px";
+/**
+ * Basic wasser mixin, generates responsive property.
+ * ---
+ * @access public
+ * ---
+ * @param {string} @property - The property to be scaled
+ * @param {number} @max — The max value for the property
+ * @param {number|string} [@min] - The min value ot the property
+ */
+.wasser(@property, @max, @min: @max / @wasser-scaling-ratio) {
+	._responsive-property(@max, @min, @property);
+}
+
+/**
+ * Basic wasser mixin for responsive typography.
+ * ---
+ * @access public
+ * ---
+ * @param {number} @max — The max value for the property
+ * @param {number|string} [@min] - The min value ot the property
+ * @param {string} [@property] - The property, defaults to padding
+ */
+.w-font(@max, @min: (@max / @wasser-scaling-ratio-font), @line-height-ratio: @wasser-font-size-to-line-height-ratio) {
+	._responsive-property(@max, @min, font-size);
+	._responsive-property(@max * @line-height-ratio, @min * @line-height-ratio, line-height);
+}
+
+._responsive-property(@max, @min, @property) {
+	@maxRem: unit(@max) / @wasser-rem-factor * 1rem;
+	@minRem: unit(@min) / @wasser-rem-factor * 1rem;
+
+	@maxViewportRem: unit(@wasser-viewport-max) / @wasser-rem-factor * 1rem;
+	@minViewportRem: unit(@wasser-viewport-min - 1) / @wasser-rem-factor * 1rem;
+
+	// This is where the magic happens ;)
+	@{property}: ~"calc(@{minRem} + (@{max} - @{min}) * (100vw - @{minViewportRem}) / (@{wasser-viewport-max} - @{wasser-viewport-min}))";
+
+	@media (min-width: @maxViewportRem) {
+		@{property}: ~"@{maxRem}";
+	}
+
+	@media (max-width: @minViewportRem) {
+		@{property}: ~"@{minRem}";
+	}
+	
+	@media print {
+		@{property}: ~"@{maxRem}";
+	}
 }

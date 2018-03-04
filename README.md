@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/wasser/master/wasser.png?sanitize=true" alt="wasser SASS/LESS Plugin">
+  <img src="https://raw.githubusercontent.com/naminho/wasser/master/wasser.png" alt="wasser SASS/LESS Plugin">
 </p>
 
 # wasser
@@ -40,7 +40,7 @@ padding: 30px;
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/wasser/master/illustration.svg?sanitize=true" alt="How the wasser plugin works visualized">
+  <img src="https://raw.githubusercontent.com/naminho/wasser/master/illustration.svg" alt="How the wasser plugin works visualized">
 </p>
 
 ## Interface

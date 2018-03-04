@@ -7,7 +7,8 @@
     "start": "node-sass examples --output examples --recursive & open examples/index.html",
     "build": "node-sass examples --output examples --recursive",
     "watch": "npm run build && node-sass examples --output examples --watch --recursive",
-    "less": "lessc examples/less/less.less examples/less/less.css"
+    "start:less": "npm run build:less & open examples/less/less.html",
+    "build:less": "lessc examples/less/less.less examples/less/less.css"
   },
   "keywords": [
     "responsive",
