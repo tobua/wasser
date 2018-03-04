@@ -1,6 +1,6 @@
 {
   "name": "wasser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "main": "index.js",
   "scripts": {
