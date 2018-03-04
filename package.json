@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "main": "index.js",
+  "repository": "github:naminho/wasser",
   "scripts": {
     "start": "node-sass examples --output examples --recursive & open examples/index.html",
     "build": "node-sass examples --output examples --recursive",
@@ -20,7 +21,7 @@
   "author": "Matthias Giger",
   "license": "MIT",
   "devDependencies": {
-    "less": "^3.0.0",
+    "less": "^3.0.1",
     "node-sass": "^4.7.2"
   }
 }
