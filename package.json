@@ -1,6 +1,6 @@
 {
   "name": "wasser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "main": "index.js",
   "repository": "github:naminho/wasser",
