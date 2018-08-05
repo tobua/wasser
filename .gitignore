@@ -1,3 +1,4 @@
 node_modules
 examples/*/*.css
 examples/*/*/*.css
+test/manual/dist

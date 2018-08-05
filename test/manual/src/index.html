@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>wasser example</title>
+    <link href="../node_modules/exmpl/dist/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="width" data-visualize="width,height">
+      <img src="https://raw.githubusercontent.com/naminho/wasser/master/wasser.png" alt="wasser-logo">
+    </div>
+    <pre>
+$ratio: 0.617283951;
+@include wasser(width, 400, 250);
+@include wasser(height, 400 * $ratio, 250 * $ratio);
+</pre>
+    <h1 class="fontSize" data-visualize="font-size">This text scales.</h1>
+    <pre>
+@include wasser(font-size, 100, 50);
+</pre>
+    <div class="padding" data-visualize="padding">I have dynamic padding.</div>
+    <pre>
+@include wasser(padding, 40, 20);
+</pre>
+    <p id="width"></p>
+  </body>
+</html>

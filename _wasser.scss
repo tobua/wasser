@@ -3,7 +3,7 @@ $wasser-viewport-max: 1500 !default;
 $wasser-scaling-ratio: 1.5 !default;
 $wasser-scaling-ratio-font: 1.25 !default;
 $wasser-font-size-to-line-height-ratio: $wasser-scaling-ratio !default;
-$wasser-rem-factor: 16 !default;
+$wasser-rem-factor: 10 !default;
 
 /**
  * Basic wasser mixin, generates responsive property.
@@ -18,7 +18,7 @@ $wasser-rem-factor: 16 !default;
 	@if type-of($max) != number {
 		@error 'wasser: A number is expected as the second parameter.';
 	}
-	
+
 	@if type-of($max) != number {
 		@error 'wasser: A number is expected as the second parameter.';
 	}
@@ -54,14 +54,14 @@ $wasser-rem-factor: 16 !default;
 	// This is where the magic happens ;)
 	#{$property}: calc(#{$minRem} + (#{$max} - #{$min}) * (100vw - #{_wasser-rem($wasser-viewport-min)}) / (#{$wasser-viewport-max} - #{$wasser-viewport-min}));
 
-	@media (min-width: #{_wasser-rem($wasser-viewport-max)}) {
+	@media (min-width: #{_wasser-rem-breakpoint($wasser-viewport-max)}) {
 		#{$property}: #{$maxRem};
 	}
 
-	@media (max-width: #{_wasser-rem($wasser-viewport-min - 1)}) {
+	@media (max-width: #{_wasser-rem-breakpoint($wasser-viewport-min - 1)}) {
 		#{$property}: #{$minRem};
 	}
-	
+
 	@media print {
 		#{$property}: #{$maxRem};
 	}
@@ -69,6 +69,11 @@ $wasser-rem-factor: 16 !default;
 
 @function _wasser-rem($pixels) {
   @return $pixels / $wasser-rem-factor * 1rem;
+}
+
+// html font-size change doesn't apply to breakpoints.
+@function _wasser-rem-breakpoint($pixels) {
+  @return $pixels / 16 * 1rem;
 }
 
 @function _wasser-strip-unit($number) {
