@@ -2,7 +2,7 @@
   "name": "wasser",
   "version": "1.1.0",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
-  "main": "index.js",
+  "main": "_wasser.scss",
   "repository": "github:naminho/wasser",
   "scripts": {
     "start": "node-sass examples --output examples --recursive & open examples/index.html",
@@ -11,6 +11,10 @@
     "start:less": "npm run build:less & open examples/less/less.html",
     "build:less": "lessc examples/less/less.less examples/less/less.css"
   },
+  "files": [
+    "_wasser.scss",
+    "wasser.less"
+  ],
   "keywords": [
     "responsive",
     "css",
