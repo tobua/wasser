@@ -25,7 +25,7 @@
   "author": "Matthias Giger",
   "license": "MIT",
   "devDependencies": {
-    "less": "^3.0.1",
-    "node-sass": "^4.7.2"
+    "less": "^3.8.0",
+    "node-sass": "^4.9.2"
   }
 }
