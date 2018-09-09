@@ -1,0 +1,38 @@
+@import '../../wasser';
+
+#container {
+  display: flex;
+}
+
+#regularContainer,
+#wasserContainer {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+}
+
+#regular,
+#wasser {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dynamic,
+.static {
+  flex-basis: 20%;
+}
+
+.dynamic {
+  @include wasser(margin, 5);
+  @include wasser(border-width, 10);
+  @include wasser(padding, 5);
+
+  border-color: black;
+  border-style: solid;
+}
+
+.static {
+  margin: 5px;
+  border: 10px solid black;
+  padding: 5px;
+}
