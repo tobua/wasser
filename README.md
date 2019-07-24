@@ -75,7 +75,13 @@ $wasser-viewport-max | 1500 | Maximum breakpoint
 $wasser-scaling-ratio | 1.5 | Ratio to calculate $min from $max when $min is not explicitly set.
 $wasser-scaling-ratio-font | 1.2 | Scaling ratio for font properties.
 $wasser-font-size-to-line-height-ratio | 1.5 | Ratio to get line-height from font-size.
-$wasser-rem-factor | 10 | Factor used to calculate rem from pixel values. Adapt this if you changed the root font-size for your project, e.g. with `html { font-size: 100%; }` change it to `16`.
+$wasser-rem-factor | 16 | Factor used to calculate rem from pixel values. Adapt this if you changed the root font-size for your project, e.g. with `html { font-size: 10px; }` change it to `10`.
+
+These variables can directly be overridden in your CSS after importing wasser, like so:
+
+```
+$wasser-viewport-max: 1000;
+```
 
 ## Browser Support
 

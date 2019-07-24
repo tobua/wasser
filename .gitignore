@@ -1,4 +1,5 @@
 node_modules
+package-lock.json
 examples/*/*.css
 examples/*/*/*.css
 test/manual/dist
