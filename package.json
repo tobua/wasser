@@ -1,15 +1,21 @@
 {
   "name": "wasser",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "main": "_wasser.scss",
   "repository": "github:naminho/wasser",
+  "author": "Matthias Giger",
+  "license": "MIT",
   "scripts": {
-    "start": "node-sass examples --output examples --recursive & open examples/index.html",
+    "start": "npm run build && open examples/index.html",
     "build": "node-sass examples --output examples --recursive",
     "watch": "npm run build && node-sass examples --output examples --watch --recursive",
     "start:less": "npm run build:less & open examples/less/less.html",
     "build:less": "lessc examples/less/less.less examples/less/less.css"
+  },
+  "devDependencies": {
+    "less": "^3.12.2",
+    "node-sass": "^4.14.1"
   },
   "files": [
     "_wasser.scss",
@@ -21,11 +27,5 @@
     "fluid",
     "scaling",
     "frontend"
-  ],
-  "author": "Matthias Giger",
-  "license": "MIT",
-  "devDependencies": {
-    "less": "^3.10.3",
-    "node-sass": "^4.13.0"
-  }
+  ]
 }
