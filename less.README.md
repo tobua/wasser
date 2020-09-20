@@ -1,4 +1,5 @@
 # wasser for LESS
+
 > Mixins for fluid CSS properties
 
 ## Installation
@@ -9,13 +10,13 @@ npm i wasser
 
 Include it in your LESS files.
 
-```
+```less
 @import 'node_modules/wasser/wasser';
 ```
 
 ## Getting started
 
-```
+```less
 body {
   .wasser(padding, 40);
 }
@@ -25,14 +26,14 @@ The method interfaces are the same as for the SASS version.
 
 ## Advanced Example and Output
 
-In the following snippet the mixin is first imported, then some defaults are 
+In the following snippet the mixin is first imported, then some defaults are
 overwritten and finally a few properties assigned.
 
-```
+```less
 @import 'node_modules/wasser/wasser';
 
-@wasser-scaling-ratio:    2;
-@wasser-viewport-min:     500;
+@wasser-scaling-ratio: 2;
+@wasser-viewport-min: 500;
 
 .example {
   .wasser(padding, 50);
@@ -42,10 +43,12 @@ overwritten and finally a few properties assigned.
 
 The following output will be generated:
 
-```
+```less
 .example {
   padding: calc(1.5625rem + (50 - 25) * (100vw - 31.1875rem) / (1500 - 500));
-  margin-bottom: calc(0.625rem + (50 - 10) * (100vw - 31.1875rem) / (1500 - 500));
+  margin-bottom: calc(
+    0.625rem + (50 - 10) * (100vw - 31.1875rem) / (1500 - 500)
+  );
 }
 
 // Static value above the default viewport of 1500px

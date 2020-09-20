@@ -19,10 +19,6 @@ $wasser-rem-factor: 16 !default;
 		@error 'wasser: A number is expected as the second parameter.';
 	}
 
-	@if type-of($max) != number {
-		@error 'wasser: A number is expected as the second parameter.';
-	}
-
 	@include _getResponsiveProperty($max, $min, $property);
 }
 

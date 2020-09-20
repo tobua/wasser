@@ -1,9 +1,11 @@
 body {
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif;
+}
 
 ul {
   list-style: none;
-  padding: 0; }
+  padding: 0;
+}
 
 a {
   color: black;
@@ -11,11 +13,13 @@ a {
   text-decoration: none;
   display: inline-block;
   padding-bottom: 2px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 a:hover {
   padding-bottom: 2px;
-  box-shadow: inset 0 -1px 0 0 black; }
+  box-shadow: inset 0 -1px 0 0 black;
+}
 
 .h-iframe {
   padding: 20px;
@@ -23,10 +27,12 @@ a:hover {
   border: none;
   text-shadow: 0 1px white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px; }
+  border-radius: 5px;
+}
 
 .iframe-wrapper {
-  position: relative; }
+  position: relative;
+}
 
 .iframe-wrapper .drag {
   cursor: pointer;
@@ -39,7 +45,8 @@ a:hover {
   background-size: 40px;
   background-image: url("draggable.svg");
   background-repeat: no-repeat;
-  background-position: 0 10px; }
+  background-position: 0 10px;
+}
 
 .h-code {
   padding: 20px;
@@ -48,4 +55,5 @@ a:hover {
   border-radius: 5px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   padding: 15px 14px 10px 14px;
-  background: #F8F8F8; }
+  background: #f8f8f8;
+}
