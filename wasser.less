@@ -1,9 +1,8 @@
-@wasser-viewport-min:                   	320;
-@wasser-viewport-max:                   	1500;
-@wasser-scaling-ratio:                 		1.5;
-@wasser-scaling-ratio-font:       				1.25;
-@wasser-font-size-to-line-height-ratio: 	@wasser-scaling-ratio;
-@wasser-rem-factor:                     	16;
+@wasser-viewport-min: 320;
+@wasser-viewport-max: 1500;
+@wasser-scaling-ratio: 1.5;
+@wasser-scaling-ratio-font: 1.25;
+@wasser-font-size-to-line-height-ratio: @wasser-scaling-ratio;
 
 /**
  * Basic wasser mixin, generates responsive property.
@@ -15,7 +14,7 @@
  * @param {number|string} [@min] - The min value ot the property
  */
 .wasser(@property, @max, @min: @max / @wasser-scaling-ratio) {
-	._responsive-property(@max, @min, @property);
+  ._responsive-property(@max, @min, @property);
 }
 
 /**
@@ -28,29 +27,25 @@
  * @param {string} [@property] - The property, defaults to padding
  */
 .w-font(@max, @min: (@max / @wasser-scaling-ratio-font), @line-height-ratio: @wasser-font-size-to-line-height-ratio) {
-	._responsive-property(@max, @min, font-size);
-	._responsive-property(@max * @line-height-ratio, @min * @line-height-ratio, line-height);
+  ._responsive-property(@max, @min, font-size);
+  ._responsive-property(@max * @line-height-ratio, @min * @line-height-ratio, line-height);
 }
 
 ._responsive-property(@max, @min, @property) {
-	@maxRem: unit(@max) / @wasser-rem-factor * 1rem;
-	@minRem: unit(@min) / @wasser-rem-factor * 1rem;
+  @viewport-min: @wasser-viewport-min - 1;
+  @difference: @wasser-viewport-max - @viewport-min;
+  // This is where the magic happens ;)
+  @{property}: ~'calc(@{min}px + (@{max} - @{min}) * (100vw - @{wasser-viewport-min}px) / (@{difference}))';
 
-	@maxViewportRem: unit(@wasser-viewport-max) / @wasser-rem-factor * 1rem;
-	@minViewportRem: unit(@wasser-viewport-min - 1) / @wasser-rem-factor * 1rem;
+  @media (min-width: ~'@{wasser-viewport-max}px') {
+    @{property}: ~'@{max}px';
+  }
 
-	// This is where the magic happens ;)
-	@{property}: ~"calc(@{minRem} + (@{max} - @{min}) * (100vw - @{minViewportRem}) / (@{wasser-viewport-max} - @{wasser-viewport-min}))";
+  @media (max-width: ~'@{viewport-min}px') {
+    @{property}: ~'@{min}px';
+  }
 
-	@media (min-width: @maxViewportRem) {
-		@{property}: ~"@{maxRem}";
-	}
-
-	@media (max-width: @minViewportRem) {
-		@{property}: ~"@{minRem}";
-	}
-	
-	@media print {
-		@{property}: ~"@{maxRem}";
-	}
+  @media print {
+    @{property}: ~'@{max}px';
+  }
 }

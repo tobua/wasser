@@ -3,7 +3,6 @@ $wasser-viewport-max: 1500 !default;
 $wasser-scaling-ratio: 1.5 !default;
 $wasser-scaling-ratio-font: 1.25 !default;
 $wasser-font-size-to-line-height-ratio: $wasser-scaling-ratio !default;
-$wasser-rem-factor: 16 !default;
 
 /**
  * Basic wasser mixin, generates responsive property.
@@ -15,11 +14,11 @@ $wasser-rem-factor: 16 !default;
  * @param {number|string} [$min] - The min value ot the property
  */
 @mixin wasser($property, $max, $min: $max / $wasser-scaling-ratio) {
-	@if type-of($max) != number {
-		@error 'wasser: A number is expected as the second parameter.';
-	}
+  @if type-of($max) != number {
+    @error 'wasser: A number is expected as the second parameter.';
+  }
 
-	@include _getResponsiveProperty($max, $min, $property);
+  @include _getResponsiveProperty($max, $min, $property);
 }
 
 /**
@@ -31,45 +30,44 @@ $wasser-rem-factor: 16 !default;
  * @param {number|string} [$min] - The min value ot the property
  * @param {string} [$property] - The property, defaults to padding
  */
-@mixin w-font($max, $min: ($max / $wasser-scaling-ratio-font), $line-height-ratio: $wasser-font-size-to-line-height-ratio) {
-	@if type-of($max) != number {
-		@error 'wasser: A number is expected as the first parameter.';
-	}
+@mixin w-font(
+  $max,
+  $min: ($max / $wasser-scaling-ratio-font),
+  $line-height-ratio: $wasser-font-size-to-line-height-ratio
+) {
+  @if type-of($max) != number {
+    @error 'wasser: A number is expected as the first parameter.';
+  }
 
-	@include _getResponsiveProperty($max, $min, font-size);
-	@include _getResponsiveProperty($max * $line-height-ratio, $min * $line-height-ratio, line-height);
+  @include _getResponsiveProperty($max, $min, font-size);
+  @include _getResponsiveProperty(
+    $max * $line-height-ratio,
+    $min * $line-height-ratio,
+    line-height
+  );
 }
 
 @mixin _getResponsiveProperty($max, $min, $property) {
-	$max: _wasser-strip-unit($max);
-	$min: _wasser-strip-unit($min);
+  $max: _wasser-strip-unit($max);
+  $min: _wasser-strip-unit($min);
 
-	$maxRem: _wasser-rem($max);
-	$minRem: _wasser-rem($min);
+  // This is where the magic happens ;)
+  #{$property}: calc(
+    #{$min}px + (#{$max} - #{$min}) * (100vw - #{$wasser-viewport-min}px) /
+      (#{$wasser-viewport-max} - #{$wasser-viewport-min - 1})
+  );
 
-	// This is where the magic happens ;)
-	#{$property}: calc(#{$minRem} + (#{$max} - #{$min}) * (100vw - #{_wasser-rem($wasser-viewport-min)}) / (#{$wasser-viewport-max} - #{$wasser-viewport-min}));
+  @media (min-width: #{$wasser-viewport-max}px) {
+    #{$property}: #{$max}px;
+  }
 
-	@media (min-width: #{_wasser-rem-breakpoint($wasser-viewport-max)}) {
-		#{$property}: #{$maxRem};
-	}
+  @media (max-width: #{$wasser-viewport-min - 1}px) {
+    #{$property}: #{$min}px;
+  }
 
-	@media (max-width: #{_wasser-rem-breakpoint($wasser-viewport-min - 1)}) {
-		#{$property}: #{$minRem};
-	}
-
-	@media print {
-		#{$property}: #{$maxRem};
-	}
-}
-
-@function _wasser-rem($pixels) {
-  @return $pixels / $wasser-rem-factor * 1rem;
-}
-
-// html font-size change doesn't apply to breakpoints.
-@function _wasser-rem-breakpoint($pixels) {
-  @return $pixels / 16 * 1rem;
+  @media print {
+    #{$property}: #{$max}px;
+  }
 }
 
 @function _wasser-strip-unit($number) {
