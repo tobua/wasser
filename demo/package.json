@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "papua start"
+  },
+  "localDependencies": {
+    "wasser": ".."
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "papua": "^0.0.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

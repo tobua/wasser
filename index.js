@@ -32,7 +32,7 @@ export const wasser = (property, max, min = max / variables.scalingRatio) => {
     throw new Error('wasser: A number is expected as the second parameter.')
   }
 
-  return getResponsiveProperty(property, max, min)
+  return getResponsiveProperty(max, min, property)
 }
 
 export const font = (
@@ -46,10 +46,10 @@ export const font = (
     )
   }
 
-  return `${getResponsiveProperty('font-size', max, min)}
+  return `${getResponsiveProperty(max, min, 'font-size')}
   ${getResponsiveProperty(
-    'line-height',
     max * lineHeightRaio,
-    min * lineHeightRaio
+    min * lineHeightRaio,
+    'line-height'
   )}`
 }

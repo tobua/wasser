@@ -3,3 +3,4 @@ package-lock.json
 docs/*/*.css
 docs/*/*/*.css
 test/manual/dist
+jsconfig.json

@@ -1,7 +1,30 @@
 {
   "name": "wasser",
-  "version": "1.1.5",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
+  "version": "1.1.5",
+  "repository": "github:naminho/wasser",
+  "license": "MIT",
+  "author": "Matthias Giger",
+  "scripts": {
+    "build": "node-sass docs --output docs --recursive",
+    "build:less": "lessc docs/less/less.less docs/less/less.css",
+    "start": "npm run build && open docs/index.html",
+    "start:less": "npm run build:less & open docs/less/less.html",
+    "test": "padua test",
+    "watch": "npm run build && node-sass demo --output docs --watch --recursive"
+  },
+  "padua": {
+    "source": true
+  },
+  "main": "index.js",
+  "source": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "_wasser.scss",
+    "wasser.less"
+  ],
   "keywords": [
     "responsive",
     "css",
@@ -9,32 +32,32 @@
     "scaling",
     "frontend"
   ],
-  "repository": "github:naminho/wasser",
-  "license": "MIT",
-  "author": "Matthias Giger",
-  "main": "_wasser.scss",
-  "source": "index.js",
-  "types": "./index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "_wasser.scss",
-    "wasser.less"
-  ],
-  "scripts": {
-    "build": "node-sass docs --output docs --recursive",
-    "build:less": "lessc docs/less/less.less docs/less/less.css",
-    "start": "npm run build && open docs/index.html",
-    "start:less": "npm run build:less & open docs/less/less.html",
-    "watch": "npm run build && node-sass demo --output docs --watch --recursive"
-  },
-  "prettier": "padua/configuration/.prettierrc.json",
-  "eslintConfig": {
-    "extends": "./node_modules/padua/configuration/eslint.cjs"
-  },
   "devDependencies": {
     "less": "^3.12.2",
     "node-sass": "^4.14.1",
-    "padua": "0.0.11"
+    "padua": "0.1.1"
+  },
+  "prettier": "padua/configuration/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./node_modules/padua/configuration/eslint.cjs",
+    "rules": {
+      "import/extensions": [
+        2,
+        "always"
+      ]
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": [
+        "babel-jest",
+        {
+          "configFile": "./node_modules/padua/configuration/.babelrc"
+        }
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 13.2.0"
   }
 }
