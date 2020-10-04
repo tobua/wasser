@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/**
+ * Basic wasser mixin, generates responsive property.
+ * ---
+ * @access public
+ * ---
+ * @param {string} $property - The property to be scaled
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ */
+/**
+ * Basic wasser mixin for responsive typography.
+ * ---
+ * @access public
+ * ---
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ * @param {string} [$property] - The property, defaults to padding
+ */
+html {
+  height: 100vh; }
+
+body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.body {
+  max-width: calc( 600px + (1000 - 600) * (100vw - 320px) / (1500 - 319));
+  padding: calc( 13.33333px + (20 - 13.33333) * (100vw - 320px) / (1500 - 319));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box; }
+  @media (min-width: 1500px) {
+    .body {
+      max-width: 1000px; } }
+  @media (max-width: 319px) {
+    .body {
+      max-width: 600px; } }
+  @media print {
+    .body {
+      max-width: 1000px; } }
+  @media (min-width: 1500px) {
+    .body {
+      padding: 20px; } }
+  @media (max-width: 319px) {
+    .body {
+      padding: 13.33333px; } }
+  @media print {
+    .body {
+      padding: 20px; } }
+
+.header {
+  height: calc( 100px + (300 - 100) * (100vw - 320px) / (1500 - 319));
+  position: relative;
+  background: #d5d5d5; }
+  @media (min-width: 1500px) {
+    .header {
+      height: 300px; } }
+  @media (max-width: 319px) {
+    .header {
+      height: 100px; } }
+  @media print {
+    .header {
+      height: 300px; } }
+  .header .title {
+    left: calc( 10px + (20 - 10) * (100vw - 320px) / (1500 - 319));
+    bottom: calc( 5px + (10 - 5) * (100vw - 320px) / (1500 - 319));
+    font-size: calc( 10px + (40 - 10) * (100vw - 320px) / (1500 - 319));
+    line-height: calc( 15px + (60 - 15) * (100vw - 320px) / (1500 - 319));
+    position: absolute; }
+    @media (min-width: 1500px) {
+      .header .title {
+        left: 20px; } }
+    @media (max-width: 319px) {
+      .header .title {
+        left: 10px; } }
+    @media print {
+      .header .title {
+        left: 20px; } }
+    @media (min-width: 1500px) {
+      .header .title {
+        bottom: 10px; } }
+    @media (max-width: 319px) {
+      .header .title {
+        bottom: 5px; } }
+    @media print {
+      .header .title {
+        bottom: 10px; } }
+    @media (min-width: 1500px) {
+      .header .title {
+        font-size: 40px; } }
+    @media (max-width: 319px) {
+      .header .title {
+        font-size: 10px; } }
+    @media print {
+      .header .title {
+        font-size: 40px; } }
+    @media (min-width: 1500px) {
+      .header .title {
+        line-height: 60px; } }
+    @media (max-width: 319px) {
+      .header .title {
+        line-height: 15px; } }
+    @media print {
+      .header .title {
+        line-height: 60px; } }
+
+.content {
+  max-width: calc( 600px + (1000 - 600) * (100vw - 320px) / (1500 - 319));
+  padding: calc( 13.33333px + (20 - 13.33333) * (100vw - 320px) / (1500 - 319));
+  display: flex;
+  flex: 1; }
+  @media (min-width: 1500px) {
+    .content {
+      max-width: 1000px; } }
+  @media (max-width: 319px) {
+    .content {
+      max-width: 600px; } }
+  @media print {
+    .content {
+      max-width: 1000px; } }
+  @media (min-width: 1500px) {
+    .content {
+      padding: 20px; } }
+  @media (max-width: 319px) {
+    .content {
+      padding: 13.33333px; } }
+  @media print {
+    .content {
+      padding: 20px; } }
+  .content .wave {
+    display: flex;
+    flex: 1;
+    max-width: 100%; }
+
+.footer {
+  height: calc( 30px + (50 - 30) * (100vw - 320px) / (1500 - 319));
+  bottom: calc( 5px + (10 - 5) * (100vw - 320px) / (1500 - 319));
+  display: flex;
+  background: #d5d5d5; }
+  @media (min-width: 1500px) {
+    .footer {
+      height: 50px; } }
+  @media (max-width: 319px) {
+    .footer {
+      height: 30px; } }
+  @media print {
+    .footer {
+      height: 50px; } }
+  @media (min-width: 1500px) {
+    .footer {
+      bottom: 10px; } }
+  @media (max-width: 319px) {
+    .footer {
+      bottom: 5px; } }
+  @media print {
+    .footer {
+      bottom: 10px; } }

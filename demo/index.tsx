@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import '@emotion/core'
 import styled from '@emotion/styled'
-import { wasser, font, configure } from 'wasser'
+import { wasser, font, configure } from 'wasser/js'
 
 configure({
   scalingRatio: 8,

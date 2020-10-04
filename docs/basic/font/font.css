@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/**
+ * Basic wasser mixin, generates responsive property.
+ * ---
+ * @access public
+ * ---
+ * @param {string} $property - The property to be scaled
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ */
+/**
+ * Basic wasser mixin for responsive typography.
+ * ---
+ * @access public
+ * ---
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ * @param {string} [$property] - The property, defaults to padding
+ */
+.t-title {
+  font-size: calc( 32px + (40 - 32) * (100vw - 320px) / (1500 - 319));
+  line-height: calc( 48px + (60 - 48) * (100vw - 320px) / (1500 - 319)); }
+  @media (min-width: 1500px) {
+    .t-title {
+      font-size: 40px; } }
+  @media (max-width: 319px) {
+    .t-title {
+      font-size: 32px; } }
+  @media print {
+    .t-title {
+      font-size: 40px; } }
+  @media (min-width: 1500px) {
+    .t-title {
+      line-height: 60px; } }
+  @media (max-width: 319px) {
+    .t-title {
+      line-height: 48px; } }
+  @media print {
+    .t-title {
+      line-height: 60px; } }
+
+.t-heading {
+  font-size: calc( 24px + (30 - 24) * (100vw - 320px) / (1500 - 319));
+  line-height: calc( 36px + (45 - 36) * (100vw - 320px) / (1500 - 319)); }
+  @media (min-width: 1500px) {
+    .t-heading {
+      font-size: 30px; } }
+  @media (max-width: 319px) {
+    .t-heading {
+      font-size: 24px; } }
+  @media print {
+    .t-heading {
+      font-size: 30px; } }
+  @media (min-width: 1500px) {
+    .t-heading {
+      line-height: 45px; } }
+  @media (max-width: 319px) {
+    .t-heading {
+      line-height: 36px; } }
+  @media print {
+    .t-heading {
+      line-height: 45px; } }
+
+.t-subheading {
+  font-size: calc( 20px + (25 - 20) * (100vw - 320px) / (1500 - 319));
+  line-height: calc( 30px + (37.5 - 30) * (100vw - 320px) / (1500 - 319)); }
+  @media (min-width: 1500px) {
+    .t-subheading {
+      font-size: 25px; } }
+  @media (max-width: 319px) {
+    .t-subheading {
+      font-size: 20px; } }
+  @media print {
+    .t-subheading {
+      font-size: 25px; } }
+  @media (min-width: 1500px) {
+    .t-subheading {
+      line-height: 37.5px; } }
+  @media (max-width: 319px) {
+    .t-subheading {
+      line-height: 30px; } }
+  @media print {
+    .t-subheading {
+      line-height: 37.5px; } }
+
+.t-text {
+  font-size: calc( 12.8px + (16 - 12.8) * (100vw - 320px) / (1500 - 319));
+  line-height: calc( 19.2px + (24 - 19.2) * (100vw - 320px) / (1500 - 319)); }
+  @media (min-width: 1500px) {
+    .t-text {
+      font-size: 16px; } }
+  @media (max-width: 319px) {
+    .t-text {
+      font-size: 12.8px; } }
+  @media print {
+    .t-text {
+      font-size: 16px; } }
+  @media (min-width: 1500px) {
+    .t-text {
+      line-height: 24px; } }
+  @media (max-width: 319px) {
+    .t-text {
+      line-height: 19.2px; } }
+  @media print {
+    .t-text {
+      line-height: 24px; } }

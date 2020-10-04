@@ -16,10 +16,11 @@
   "padua": {
     "source": true
   },
-  "main": "index.js",
-  "source": "index.js",
-  "types": "index.d.ts",
+  "main": "_wasser.scss",
+  "source": "js/index.js",
+  "types": "js/index.d.ts",
   "files": [
+    "js",
     "index.js",
     "index.d.ts",
     "_wasser.scss",

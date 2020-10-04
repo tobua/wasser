@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+ * Basic wasser mixin, generates responsive property.
+ * ---
+ * @access public
+ * ---
+ * @param {string} $property - The property to be scaled
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ */
+/**
+ * Basic wasser mixin for responsive typography.
+ * ---
+ * @access public
+ * ---
+ * @param {number} $max — The max value for the property
+ * @param {number|string} [$min] - The min value ot the property
+ * @param {string} [$property] - The property, defaults to padding
+ */
+body {
+  padding: calc( 33.33333px + (50 - 33.33333) * (100vw - 320px) / (1500 - 319));
+  margin: 0; }
+  @media (min-width: 1500px) {
+    body {
+      padding: 50px; } }
+  @media (max-width: 319px) {
+    body {
+      padding: 33.33333px; } }
+  @media print {
+    body {
+      padding: 50px; } }

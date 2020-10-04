@@ -1,0 +1,104 @@
+/**
+ * Basic wasser mixin, generates responsive property.
+ * ---
+ * @access public
+ * ---
+ * @param {string} @property - The property to be scaled
+ * @param {number} @max — The max value for the property
+ * @param {number|string} [@min] - The min value ot the property
+ */
+/**
+ * Basic wasser mixin for responsive typography.
+ * ---
+ * @access public
+ * ---
+ * @param {number} @max — The max value for the property
+ * @param {number|string} [@min] - The min value ot the property
+ * @param {string} [@property] - The property, defaults to padding
+ */
+body {
+  padding: calc(20px + (40 - 20) * (100vw - 500px) / (1001));
+}
+@media (min-width: 1500px) {
+  body {
+    padding: 40px;
+  }
+}
+@media (max-width: 499px) {
+  body {
+    padding: 20px;
+  }
+}
+@media print {
+  body {
+    padding: 40px;
+  }
+}
+h1 {
+  font-size: calc(10px + (40 - 10) * (100vw - 500px) / (1001));
+  line-height: calc(20px + (80 - 20) * (100vw - 500px) / (1001));
+  padding: calc(2.5px + (5 - 2.5) * (100vw - 500px) / (1001));
+  border-width: calc(5px + (10 - 5) * (100vw - 500px) / (1001));
+  border-style: solid;
+  border-color: lightblue;
+}
+@media (min-width: 1500px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 499px) {
+  h1 {
+    font-size: 10px;
+  }
+}
+@media print {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1500px) {
+  h1 {
+    line-height: 80px;
+  }
+}
+@media (max-width: 499px) {
+  h1 {
+    line-height: 20px;
+  }
+}
+@media print {
+  h1 {
+    line-height: 80px;
+  }
+}
+@media (min-width: 1500px) {
+  h1 {
+    padding: 5px;
+  }
+}
+@media (max-width: 499px) {
+  h1 {
+    padding: 2.5px;
+  }
+}
+@media print {
+  h1 {
+    padding: 5px;
+  }
+}
+@media (min-width: 1500px) {
+  h1 {
+    border-width: 10px;
+  }
+}
+@media (max-width: 499px) {
+  h1 {
+    border-width: 5px;
+  }
+}
+@media print {
+  h1 {
+    border-width: 10px;
+  }
+}
