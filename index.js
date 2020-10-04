@@ -9,10 +9,10 @@ const variables = {
 export const configure = (configuration) =>
   Object.assign(variables, configuration)
 
-const getResponsiveProperty = (max, min, property) => `
-    ${property}: calc(${min} + (${max} - ${min}) * (100vw - ${
+const getResponsiveProperty = (property, max, min) => `
+    ${property}: calc(${min}px + (${max} - ${min}) * (100vw - ${
   variables.viewportMin
-}) / (${variables.viewportMax} - ${variables.viewportMin}));
+}px) / (${variables.viewportMax} - ${variables.viewportMin}));
 
     @media (min-width: ${variables.viewportMax}) {
         ${property}: ${max};
@@ -32,7 +32,7 @@ export const wasser = (property, max, min = max / variables.scalingRatio) => {
     throw new Error('wasser: A number is expected as the second parameter.')
   }
 
-  return getResponsiveProperty(max, min, property)
+  return getResponsiveProperty(property, max, min)
 }
 
 export const font = (
@@ -46,10 +46,10 @@ export const font = (
     )
   }
 
-  return `${getResponsiveProperty(max, min, 'font-size')}
+  return `${getResponsiveProperty('font-size', max, min)}
   ${getResponsiveProperty(
+    'line-height',
     max * lineHeightRaio,
-    min * lineHeightRaio,
-    'line-height'
+    min * lineHeightRaio
   )}`
 }
