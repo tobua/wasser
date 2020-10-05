@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import '@emotion/core'
 import styled from '@emotion/styled'
-import { wasser, font, configure } from 'wasser/js'
+import { wasser, font, configure } from 'wasser'
 
 configure({
   scalingRatio: 8,
@@ -17,10 +17,8 @@ export const Heading = styled.h1`
 `
 
 render(
-  <div>
-    <Wrapper>
-      <Heading>Scalable Property</Heading>
-    </Wrapper>
-  </div>,
+  <Wrapper>
+    <Heading>Scalable Property</Heading>
+  </Wrapper>,
   document.body
 )

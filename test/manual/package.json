@@ -1,23 +1,26 @@
 {
   "scripts": {
-    "start": "webpack && open dist/index.html",
+    "start": "synec --no-watch && webpack && open dist/index.html",
     "serve": "webpack-serve",
     "watch": "webpack --watch",
     "build": "webpack"
   },
   "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.1.0",
-    "exmpl": "^1.0.2",
-    "html-webpack-plugin": "^4.0.0-alpha",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "wasser": "^1.1.2",
-    "webpack": "^4.37.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-serve": "^3.1.1"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "exmpl": "^1.0.3",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.3.0",
+    "synec": "^0.1.7",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-serve": "^3.2.0"
+  },
+  "localDependencies": {
+    "wasser": "../.."
   }
 }

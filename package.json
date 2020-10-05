@@ -10,17 +10,15 @@
     "build:less": "lessc docs/less/less.less docs/less/less.css",
     "start": "npm run build && open docs/index.html",
     "start:less": "npm run build:less & open docs/less/less.html",
-    "test": "padua test",
     "watch": "npm run build && node-sass demo --output docs --watch --recursive"
   },
   "padua": {
     "source": true
   },
-  "main": "_wasser.scss",
-  "source": "js/index.js",
-  "types": "js/index.d.ts",
+  "main": "index.js",
+  "source": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "js",
     "index.js",
     "index.d.ts",
     "_wasser.scss",
