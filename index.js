@@ -14,16 +14,16 @@ const getResponsiveProperty = (property, max, min) => `
   variables.viewportMin
 }px) / (${variables.viewportMax} - ${variables.viewportMin}));
 
-    @media (min-width: ${variables.viewportMax}) {
-        ${property}: ${max};
+    @media (min-width: ${variables.viewportMax}px) {
+        ${property}: ${max}px;
     }
 
-    @media (max-width: ${variables.viewportMin - 1}) {
-        ${property}: ${min};
+    @media (max-width: ${variables.viewportMin - 1}px) {
+        ${property}: ${min}px;
     }
 
     @media print {
-        ${property}: ${max};
+        ${property}: ${max}px;
     }
 `
 
