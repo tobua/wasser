@@ -1,4 +1,7 @@
-export const evaluate = ({ styles, body, width, selector }) => {
+// eslint-disable-next-line import/extensions
+import mapSeries from 'async/mapSeries'
+
+export const evaluate = async ({ styles, body, widths, selector }) => {
   const html = `<!DOCTYPE html>
     <head>
         ${styles.map((style) => `<style>${style}</style>`)}
@@ -9,12 +12,28 @@ export const evaluate = ({ styles, body, width, selector }) => {
 </html>`
 
   page.setContent(html)
-  page.setViewport({
-    width,
-    height: 1000,
-    // deviceScaleFactor: 1,
-    // isMobile: false
+
+  const results = await new Promise((done) =>
+    // Have to be run in series as browser instance is shared.
+    mapSeries(
+      widths,
+      async (width) => {
+        page.setViewport({
+          width,
+          height: 1000,
+        })
+
+        return page.evaluate(selector)
+      },
+      (_, result) => done(result)
+    )
+  )
+
+  const result = {}
+
+  results.forEach((_result, index) => {
+    result[widths[index]] = _result
   })
 
-  return page.evaluate(selector)
+  return result
 }
