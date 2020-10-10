@@ -1,24 +1,26 @@
 import React from 'react'
 import { render } from 'react-dom'
-import '@emotion/core'
+import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { wasser, font, configure } from 'wasser'
+import { wasser, font, configure, head } from 'wasser'
 
 configure({
   scalingRatio: 8,
+  scalingRatioFont: 5,
 })
 
-export const Wrapper = styled.div`
-  ${wasser('padding', 50)}
+const Wrapper: any = styled.div`
+  padding: ${wasser(50)};
 `
 
-export const Heading = styled.h1`
+const Heading: any = styled('h1')`
   ${font(50)}
 `
 
 render(
   <Wrapper>
-    <Heading>Scalable Property</Heading>
+    <Global styles={css(head())} />
+    <Heading>Scalable Properties</Heading>
   </Wrapper>,
   document.body
 )

@@ -9,30 +9,60 @@ const variables = {
 export const configure = (configuration) =>
   Object.assign(variables, configuration)
 
-const getResponsiveProperty = (property, max, min) => `
-    ${property}: calc(${min}px + (${max} - ${min}) * (100vw - ${
-  variables.viewportMin
-}px) / (${variables.viewportMax} - ${variables.viewportMin}));
+const calculation = (max, min) => {
+  const minReached = `${min}px * var(--min)`
+  const maxReached = `${max}px * var(--max)`
+  const difference = max - min
+  const between = `var(--factor)) * var(--between)`
 
-    @media (min-width: ${variables.viewportMax}px) {
-        ${property}: ${max}px;
-    }
+  return `calc((${min}px + ${difference} * ${between} + ${minReached} + ${maxReached})`
+}
 
-    @media (max-width: ${variables.viewportMin - 1}px) {
-        ${property}: ${min}px;
-    }
+export const head = () => `
+:root {
+  --factor: (100vw - ${variables.viewportMin}px) / ${
+  variables.viewportMax - variables.viewportMin
+};
+  --max: 0;
+  --between: 1;
+  --min: 0;
+}
 
-    @media print {
-        ${property}: ${max}px;
-    }
-`
+@media (min-width: ${variables.viewportMax}px) {
+  :root {
+    --max: 1;
+    --between: 0;
+    --min: 0;
+  }
+}
 
-export const wasser = (property, max, min = max / variables.scalingRatio) => {
+@media (max-width: ${variables.viewportMin}px) {
+  :root {
+    --max: 0;
+    --between: 0;
+    --min: 1;
+  }
+}
+
+@media print {
+  --max: 1;
+  --between: 0;
+  --min: 0;
+}`
+
+export const wasser = (max, min = max / variables.scalingRatio) => {
+  const errorMessage = (place) =>
+    `wasser: A number is expected as the ${place} parameter for wasser(max: number, min: number).`
+
   if (typeof max !== 'number') {
-    throw new Error('wasser: A number is expected as the second parameter.')
+    throw new Error(errorMessage('first'))
   }
 
-  return getResponsiveProperty(property, max, min)
+  if (typeof max !== 'number') {
+    throw new Error(errorMessage('second'))
+  }
+
+  return calculation(max, min)
 }
 
 export const font = (
@@ -46,10 +76,6 @@ export const font = (
     )
   }
 
-  return `${getResponsiveProperty('font-size', max, min)}
-  ${getResponsiveProperty(
-    'line-height',
-    max * lineHeightRaio,
-    min * lineHeightRaio
-  )}`
+  return `font-size: ${calculation(max, min)};
+line-height: ${calculation(max * lineHeightRaio, min * lineHeightRaio)};`
 }
