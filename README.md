@@ -17,10 +17,12 @@ a design of the desktop version you get the mobile version for free.
 
 ## CSS-in-JS, SASS or LESS?
 
-This README documents the CSS-in-JS version, see the following READMEs for documentation with SASS or LESS.
+Below the CSS-in-JS version is documented. Please refer to the following documentations if you prefer SASS or LESS:
 
-[SASS README](docs/sass.md)
-[LESS README](docs/less.md)
+- [SASS Documentation](docs/sass.md)
+- [LESS Documentation](docs/less.md)
+
+The CSS-in-JS version is newer and requires CSS Variables (no IE11). Both the SASS and LESS version also work with older browsers.
 
 ## Installation and Usage
 
@@ -33,7 +35,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { wasser, font, head } from 'wasser/js'
+import { wasser, font, head } from 'wasser'
 
 const Wrapper: any = styled.div`
   padding: ${wasser(50)};
@@ -60,13 +62,18 @@ render(
 
 ## Interface
 
-`wasser(property: string, max: number, [min]: number)`
+`wasser(max: number, [min]: number)`
 
-`property` can be any CSS property with numerical value. `max` will be the value
-at the upper breakpoint, while `min` will be the value
+`max` will be the value at the upper breakpoint, while `min` will be the value
 at the lower breakpoint.
 
 If `min` is missing, `max` divided by the scaling factor will be used.
+
+```css
+.some-element {
+  padding: ${wasser(20)};
+}
+```
 
 ### Fonts
 
@@ -76,12 +83,18 @@ This call does not require a property as it will set both the `font-size` and
 the associated `line-height`. The `line-height` does not require a separate value
 since it is stretched by the configurable `fontSizeToLineHeightRatio`.
 
+```css
+.some-text {
+  ${font(16)}
+}
+```
+
 ## Configuration
 
 Call the `configure` function before rendering to change the default settings.
 
 ```jsx
-import { configure } from 'wasser/js'
+import { configure } from 'wasser'
 
 configure({
   scalingRatio: 2,

@@ -24,6 +24,12 @@ body {
 
 The method interfaces are the same as for the SASS version.
 
+```less
+.text {
+  .w-font(20);
+}
+```
+
 ## Advanced Example and Output
 
 In the following snippet the mixin is first imported, then some defaults are
