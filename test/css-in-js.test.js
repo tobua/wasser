@@ -1,6 +1,6 @@
-import { evaluate } from './utility/evaluate.js'
-import { defaults } from './utility/defaults.js'
-import { wasser, font, head, configure } from '../index.js'
+import { evaluate } from './utility/evaluate'
+import { defaults } from './utility/defaults'
+import { wasser, font, head, configure } from '../index'
 
 const twoElementBody = `<p id="regular-text" class="text">Hello world</p>
 <div id="div-element" class="element">Here we are</div>`
@@ -98,7 +98,7 @@ test('Max and min values reached on maximum viewport.', async () => {
 test('Ratios can be configured.', async () => {
   configure({
     scalingRatio: 2,
-    scalingRatioFont: 3
+    scalingRatioFont: 3,
   })
 
   const styles = `.text {
