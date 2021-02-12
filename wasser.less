@@ -13,7 +13,7 @@
  * @param {number} @max — The max value for the property
  * @param {number|string} [@min] - The min value ot the property
  */
-.wasser(@property, @max, @min: @max / @wasser-scaling-ratio) {
+.wasser(@property, @max, @min: (@max / @wasser-scaling-ratio)) {
   ._responsive-property(@max, @min, @property);
 }
 
@@ -32,7 +32,7 @@
 }
 
 ._responsive-property(@max, @min, @property) {
-  @viewport-min: @wasser-viewport-min - 1;
+  @viewport-min: @wasser-viewport-min;
   @difference: @wasser-viewport-max - @viewport-min;
   // This is where the magic happens ;)
   @{property}: ~'calc(@{min}px + (@{max} - @{min}) * (100vw - @{wasser-viewport-min}px) / (@{difference}))';

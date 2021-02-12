@@ -61,7 +61,7 @@ $wasser-font-size-to-line-height-ratio: $wasser-scaling-ratio !default;
     #{$property}: #{$max}px;
   }
 
-  @media (max-width: #{$wasser-viewport-min - 1}px) {
+  @media (max-width: #{$wasser-viewport-min}px) {
     #{$property}: #{$min}px;
   }
 
