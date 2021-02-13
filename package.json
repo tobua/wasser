@@ -3,6 +3,7 @@
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "version": "2.0.0",
   "repository": "github:naminho/wasser",
+  "homepage": "https://tobua.github.io/wasser",
   "license": "MIT",
   "author": "Matthias Giger",
   "scripts": {
@@ -38,7 +39,7 @@
     "less": "^4.1.1",
     "node-sass": "^5.0.0",
     "padua": "0.2.5",
-    "puppeteer": "^7.0.4"
+    "puppeteer": "^7.1.0"
   },
   "prettier": "padua/configuration/.prettierrc.json",
   "eslintConfig": {

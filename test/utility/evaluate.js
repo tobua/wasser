@@ -1,5 +1,12 @@
 // eslint-disable-next-line import/extensions
 import mapSeries from 'async/mapSeries'
+import sass from 'node-sass'
+import less from 'less'
+
+export const renderSass = (input) =>
+  sass.renderSync({ data: input, includePaths: [process.cwd()] }).css.toString()
+
+export const renderLess = async (input) => (await less.render(input, {})).css
 
 export const evaluate = async ({ styles, body, widths, selector }) => {
   const html = `<!DOCTYPE html>
