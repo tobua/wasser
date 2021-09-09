@@ -1,7 +1,7 @@
 {
   "name": "wasser",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "repository": "github:tobua/wasser",
   "homepage": "https://tobua.github.io/wasser",
   "license": "MIT",

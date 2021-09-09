@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/tobua/wasser/compare/v2.0.1...v2.1.0) (2021-09-09)
+
+
+### Features
+
+* **css-in-js:** round values to three digits to increase readability ([7c8a6c8](https://github.com/tobua/wasser/commit/7c8a6c854a28119b19a7b0009780cecf819c91d4))
+
 ### [2.0.1](https://github.com/naminho/wasser/compare/v2.0.0...v2.0.1) (2021-02-13)
 
 
