@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { wasser, font, configure, head } from 'wasser'
 

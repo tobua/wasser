@@ -8,12 +8,12 @@ $wasser-viewport-max: 1000;
 }
 
 .padding {
-	@include wasser(padding, 40, 20);
+  @include wasser(padding, 40, 20);
 }
 
 .width {
   $ratio: 0.617283951;
-	@include wasser(width, 400, 250);
+  @include wasser(width, 400, 250);
   @include wasser(height, 400 * $ratio, 250 * $ratio);
 
   // Centers the image

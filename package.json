@@ -2,7 +2,7 @@
   "name": "wasser",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
   "version": "2.0.1",
-  "repository": "github:naminho/wasser",
+  "repository": "github:tobua/wasser",
   "homepage": "https://tobua.github.io/wasser",
   "license": "MIT",
   "author": "Matthias Giger",
@@ -17,6 +17,18 @@
     "watch": "npm run build && node-sass demo --output docs --watch --recursive"
   },
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./wasser": {
+      "default": "./_wasser.scss"
+    },
+    "./wasser.less": {
+      "default": "./wasser.less"
+    }
+  },
+  "sideEffects": false,
   "source": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -34,12 +46,12 @@
     "frontend"
   ],
   "devDependencies": {
-    "async": "^3.2.0",
-    "jest-puppeteer": "^4.4.0",
+    "async": "^3.2.1",
+    "jest-puppeteer": "^5.0.4",
     "less": "^4.1.1",
-    "node-sass": "^5.0.0",
-    "padua": "0.2.5",
-    "puppeteer": "^7.1.0"
+    "node-sass": "^6.0.1",
+    "padua": "0.3.10",
+    "puppeteer": "^10.2.0"
   },
   "prettier": "padua/configuration/.prettierrc.json",
   "eslintConfig": {

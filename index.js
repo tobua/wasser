@@ -9,7 +9,12 @@ const variables = {
 export const configure = (configuration) =>
   Object.assign(variables, configuration)
 
-const calculation = (max, min) => {
+// Round number to three digits and remove zeros.
+const round = (value) => parseFloat(value.toFixed(3))
+
+const calculation = (_max, _min) => {
+  const max = round(_max)
+  const min = round(_min)
   const minReached = `${min}px * var(--min)`
   const maxReached = `${max}px * var(--max)`
   const difference = max - min
