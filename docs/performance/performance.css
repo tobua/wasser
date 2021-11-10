@@ -44,7 +44,7 @@
   @media (min-width: 1500px) {
     .dynamic {
       margin: 5px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .dynamic {
       margin: 3.33333px; } }
   @media print {
@@ -53,7 +53,7 @@
   @media (min-width: 1500px) {
     .dynamic {
       border-width: 10px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .dynamic {
       border-width: 6.66667px; } }
   @media print {
@@ -62,7 +62,7 @@
   @media (min-width: 1500px) {
     .dynamic {
       padding: 5px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .dynamic {
       padding: 3.33333px; } }
   @media print {

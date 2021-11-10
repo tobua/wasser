@@ -1,7 +1,7 @@
 {
   "name": "wasser",
   "description": "Mixins for fluid CSS properties in SASS or LESS",
-  "version": "2.1.0",
+  "version": "0.0.0-development",
   "repository": "github:tobua/wasser",
   "homepage": "https://tobua.github.io/wasser",
   "license": "MIT",
@@ -12,10 +12,12 @@
     "build:sass": "node-sass docs --output docs --recursive",
     "start": "padua watch",
     "start:less": "npm run build:less & open docs/less/less.html",
-    "start:sass": "npm run build && open docs/index.html",
+    "start:sass": "npm run build:sass && open docs/index.html",
     "test": "padua test",
     "watch": "npm run build && node-sass demo --output docs --watch --recursive"
   },
+  "type": "module",
+  "sideEffects": false,
   "main": "dist/index.js",
   "exports": {
     ".": {
@@ -28,7 +30,6 @@
       "default": "./wasser.less"
     }
   },
-  "sideEffects": false,
   "source": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -46,12 +47,12 @@
     "frontend"
   ],
   "devDependencies": {
-    "async": "^3.2.1",
-    "jest-puppeteer": "^5.0.4",
-    "less": "^4.1.1",
+    "async": "^3.2.2",
+    "jest-puppeteer": "^6.0.0",
+    "less": "^4.1.2",
     "node-sass": "^6.0.1",
-    "padua": "0.3.10",
-    "puppeteer": "^10.2.0"
+    "padua": "0.4.1",
+    "puppeteer": "^11.0.0"
   },
   "prettier": "padua/configuration/.prettierrc.json",
   "eslintConfig": {

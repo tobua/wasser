@@ -38,7 +38,7 @@ body {
   @media (min-width: 1500px) {
     .body {
       max-width: 1000px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .body {
       max-width: 600px; } }
   @media print {
@@ -47,7 +47,7 @@ body {
   @media (min-width: 1500px) {
     .body {
       padding: 20px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .body {
       padding: 13.33333px; } }
   @media print {
@@ -61,7 +61,7 @@ body {
   @media (min-width: 1500px) {
     .header {
       height: 300px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .header {
       height: 100px; } }
   @media print {
@@ -76,7 +76,7 @@ body {
     @media (min-width: 1500px) {
       .header .title {
         left: 20px; } }
-    @media (max-width: 319px) {
+    @media (max-width: 320px) {
       .header .title {
         left: 10px; } }
     @media print {
@@ -85,7 +85,7 @@ body {
     @media (min-width: 1500px) {
       .header .title {
         bottom: 10px; } }
-    @media (max-width: 319px) {
+    @media (max-width: 320px) {
       .header .title {
         bottom: 5px; } }
     @media print {
@@ -94,7 +94,7 @@ body {
     @media (min-width: 1500px) {
       .header .title {
         font-size: 40px; } }
-    @media (max-width: 319px) {
+    @media (max-width: 320px) {
       .header .title {
         font-size: 10px; } }
     @media print {
@@ -103,7 +103,7 @@ body {
     @media (min-width: 1500px) {
       .header .title {
         line-height: 60px; } }
-    @media (max-width: 319px) {
+    @media (max-width: 320px) {
       .header .title {
         line-height: 15px; } }
     @media print {
@@ -118,7 +118,7 @@ body {
   @media (min-width: 1500px) {
     .content {
       max-width: 1000px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .content {
       max-width: 600px; } }
   @media print {
@@ -127,7 +127,7 @@ body {
   @media (min-width: 1500px) {
     .content {
       padding: 20px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .content {
       padding: 13.33333px; } }
   @media print {
@@ -146,7 +146,7 @@ body {
   @media (min-width: 1500px) {
     .footer {
       height: 50px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .footer {
       height: 30px; } }
   @media print {
@@ -155,7 +155,7 @@ body {
   @media (min-width: 1500px) {
     .footer {
       bottom: 10px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .footer {
       bottom: 5px; } }
   @media print {

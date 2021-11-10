@@ -29,7 +29,7 @@ padding: 30px;
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/naminho/wasser/master/illustration.svg?sanitize=true" alt="How the wasser plugin works visualized">
+  <img src="https://raw.githubusercontent.com/tobua/wasser/main/illustration.svg?sanitize=true" alt="How the wasser plugin works visualized">
 </p>
 
 ## Interface

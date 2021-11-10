@@ -23,7 +23,7 @@ body {
   @media (min-width: 1500px) {
     body {
       padding: 50px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     body {
       padding: 33.33333px; } }
   @media print {

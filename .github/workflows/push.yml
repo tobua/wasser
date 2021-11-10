@@ -1,0 +1,20 @@
+name: push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: 🧪 Test
+        run: npm test
+      - name: 🚧 Build
+        run: npm run build
+      - uses: tobua/release-npm-action@v1
+        with:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

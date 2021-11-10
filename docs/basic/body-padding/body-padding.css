@@ -22,7 +22,7 @@ body {
   @media (min-width: 1500px) {
     body {
       margin: 40px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     body {
       margin: 26.66667px; } }
   @media print {
@@ -35,7 +35,7 @@ body {
   @media (min-width: 1500px) {
     .inner {
       padding: 20px; } }
-  @media (max-width: 319px) {
+  @media (max-width: 320px) {
     .inner {
       padding: 5px; } }
   @media print {
