@@ -4,6 +4,9 @@
 
 # wasser
 
+[![Demo](https://img.shields.io/static/v1?label=wasser&message=Demo&color=brightgreen)](https://tobua.github.io/wasser)
+[![npm](https://img.shields.io/npm/v/wasser)](https://npmjs.com/wasser)
+
 > Fluid CSS properties
 
 Create highly responsive and still pixel-perfect websites.
@@ -33,6 +36,35 @@ npm i wasser
 ```jsx
 import React from 'react'
 import { render } from 'react-dom'
+import { styled, globalCss } from '@stitches/react'
+import { wasser, globalVariables, fontObject } from 'wasser'
+
+globalCss(globalVariables())()
+
+const Wrapper = styled('div', {
+  padding: wasser(50),
+})
+
+const Heading = styled('h1', {
+  ...fontObject(50),
+})
+
+render(
+  <Wrapper>
+    <Heading>Scalable Properties</Heading>
+  </Wrapper>,
+  document.body
+)
+```
+
+### Usage with `@emotion`
+
+<details>
+  <summary>Click to show usage with @emotion!</summary>
+
+```jsx
+import React from 'react'
+import { render } from 'react-dom'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import { wasser, font, head } from 'wasser'
@@ -53,6 +85,8 @@ render(
   document.body
 )
 ```
+
+</details>
 
 ## How it works
 
@@ -75,6 +109,12 @@ If `min` is missing, `max` divided by the scaling factor will be used.
 }
 ```
 
+```js
+const SomeElement = styled('div', {
+  padding: wasser(20),
+})
+```
+
 ### Fonts
 
 `font(max: number, [min]: number, [line-height-ratio]: number)`
@@ -87,6 +127,22 @@ since it is stretched by the configurable `fontSizeToLineHeightRatio`.
 .some-text {
   ${font(16)}
 }
+// =>
+.some-text {
+  font-size: ...;
+  line-height: ...;
+}
+```
+
+```js
+const Heading = styled('h3', {
+  ...fontObject(18),
+})
+// =>
+const Heading = styled('h3', {
+  fontSize: ...,
+  lineHeight: ...,
+})
 ```
 
 ## Configuration
