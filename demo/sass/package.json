@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "css-loader": "^6.5.1",
-    "exmpl": "^1.0.3",
-    "node-sass": "^6.0.1",
-    "papua": "0.1.33",
-    "sass-loader": "^12.3.0",
+    "css-loader": "^6.7.0",
+    "exmpl": "^2.2.1",
+    "node-sass": "^7.0.1",
+    "papua": "0.1.39",
+    "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1"
   },
   "localDependencies": {

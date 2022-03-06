@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@stitches/react": "^1.2.5",
-    "papua": "^0.1.34",
+    "@stitches/react": "^1.2.7",
+    "papua": "^0.1.39",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
