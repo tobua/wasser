@@ -20,7 +20,7 @@ test('Has possible values on viewport somewhre between min and max.', async () =
     body: twoElementBody,
     widths: [1000],
     // Executed inside puppeteer, will only return results.
-    selector: () => {
+    selector: function Selector() {
       const regularText = document.querySelector('#regular-text')
       const regularTextStyle = window.getComputedStyle(regularText)
       const divElement = document.querySelector('#div-element')
@@ -72,12 +72,8 @@ test('Max and min values reached on maximum viewport.', async () => {
     widths: [defaults.viewportMin, defaults.viewportMax],
     // Executed inside puppeteer, will only return results.
     selector: () => {
-      const regularTextStyle = window.getComputedStyle(
-        document.querySelector('#regular-text')
-      )
-      const divElementStyle = window.getComputedStyle(
-        document.querySelector('#div-element')
-      )
+      const regularTextStyle = window.getComputedStyle(document.querySelector('#regular-text'))
+      const divElementStyle = window.getComputedStyle(document.querySelector('#div-element'))
       return {
         regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
         divElementHeight: parseFloat(divElementStyle.height, 10),
@@ -116,12 +112,8 @@ test('Ratios can be configured.', async () => {
     widths: [defaults.viewportMin, 910, defaults.viewportMax],
     // Executed inside puppeteer, will only return results.
     selector: () => {
-      const regularTextStyle = window.getComputedStyle(
-        document.querySelector('#regular-text')
-      )
-      const divElementStyle = window.getComputedStyle(
-        document.querySelector('#div-element')
-      )
+      const regularTextStyle = window.getComputedStyle(document.querySelector('#regular-text'))
+      const divElementStyle = window.getComputedStyle(document.querySelector('#div-element'))
       return {
         regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
         divElementHeight: parseFloat(divElementStyle.height, 10),

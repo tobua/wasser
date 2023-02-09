@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import mapSeries from 'async/mapSeries'
 import sass from 'node-sass'
 import less from 'less'
@@ -20,21 +19,16 @@ export const evaluate = async ({ styles, body, widths, selector }) => {
 
   page.setContent(html)
 
-  const results = await new Promise((done) =>
-    // Have to be run in series as browser instance is shared.
-    mapSeries(
-      widths,
-      async (width) => {
-        page.setViewport({
-          width,
-          height: 1000,
-        })
+  const results = await mapSeries(widths, async (width) => {
+    page.setViewport({
+      width,
+      height: 1000,
+    })
 
-        return page.evaluate(selector)
-      },
-      (_, result) => done(result)
-    )
-  )
+    const document = await page.$('document')
+
+    return page.evaluate(selector, document)
+  })
 
   const result = {}
 

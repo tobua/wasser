@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { createStitches } from '@stitches/react'
 import { wasser, fontObject, configure, globalVariables } from 'wasser'
 
@@ -20,9 +20,8 @@ const Heading = styled('h1', {
   ...fontObject(50),
 })
 
-render(
+createRoot(document.body as HTMLElement).render(
   <Wrapper>
     <Heading>Scalable Properties</Heading>
-  </Wrapper>,
-  document.body
+  </Wrapper>
 )
