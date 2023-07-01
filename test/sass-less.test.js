@@ -27,9 +27,7 @@ const suite = (name, getContext) => {
 suite('Proper sizes around common viewports', () => {
   // Pixels between min and max viewport.
   const viewPortDifference = defaults.viewportMax - defaults.viewportMin
-  const viewportMiddle = Math.floor(
-    defaults.viewportMin + viewPortDifference / 2
-  )
+  const viewportMiddle = Math.floor(defaults.viewportMin + viewPortDifference / 2)
 
   const viewPorts = [
     defaults.viewportMin,
@@ -63,25 +61,15 @@ suite('Proper sizes around common viewports', () => {
     },
     // Slightly above min, should be slightly more.
     [viewPorts[3]]: {
-      text:
-        textSize -
-        (textSize - textSize / defaults.scalingRatioFont) *
-          scale50PixelsAboveMin,
+      text: textSize - (textSize - textSize / defaults.scalingRatioFont) * scale50PixelsAboveMin,
       element:
-        elementSize -
-        (elementSize - elementSize / defaults.scalingRatio) *
-          scale50PixelsAboveMin,
+        elementSize - (elementSize - elementSize / defaults.scalingRatio) * scale50PixelsAboveMin,
     },
     // Slightly below max, should be slightly less.
     [viewPorts[4]]: {
-      text:
-        textSize -
-        (textSize - textSize / defaults.scalingRatioFont) *
-          scale50PixelsBelowMax,
+      text: textSize - (textSize - textSize / defaults.scalingRatioFont) * scale50PixelsBelowMax,
       element:
-        elementSize -
-        (elementSize - elementSize / defaults.scalingRatio) *
-          scale50PixelsBelowMax,
+        elementSize - (elementSize - elementSize / defaults.scalingRatio) * scale50PixelsBelowMax,
     },
     // Above max, should be same as max.
     [viewPorts[5]]: {
@@ -91,8 +79,7 @@ suite('Proper sizes around common viewports', () => {
     // Exactly in between.
     [viewPorts[6]]: {
       text: textSize - (textSize - textSize / defaults.scalingRatioFont) * 0.5,
-      element:
-        elementSize - (elementSize - elementSize / defaults.scalingRatio) * 0.5,
+      element: elementSize - (elementSize - elementSize / defaults.scalingRatio) * 0.5,
     },
   }
 
@@ -122,13 +109,8 @@ suite('Proper sizes around common viewports', () => {
       viewPorts.forEach((viewPort) => {
         const result = results[viewPort]
 
-        expect(result.regularTextFontSize).toBeCloseTo(
-          expectedResults[viewPort].text
-        )
-        expect(result.divElementHeight).toBeCloseTo(
-          expectedResults[viewPort].element,
-          1
-        )
+        expect(result.regularTextFontSize).toBeCloseTo(expectedResults[viewPort].text)
+        expect(result.divElementHeight).toBeCloseTo(expectedResults[viewPort].element, 1)
       })
     },
     evaluateConfiguration: defaultEvaluateConfiguration(viewPorts),
@@ -177,25 +159,15 @@ suite('Viewports can be modified', () => {
     },
     // Slightly above min, should be slightly more.
     [viewPorts[3]]: {
-      text:
-        textSize -
-        (textSize - textSize / defaults.scalingRatioFont) *
-          scale50PixelsAboveMin,
+      text: textSize - (textSize - textSize / defaults.scalingRatioFont) * scale50PixelsAboveMin,
       element:
-        elementSize -
-        (elementSize - elementSize / defaults.scalingRatio) *
-          scale50PixelsAboveMin,
+        elementSize - (elementSize - elementSize / defaults.scalingRatio) * scale50PixelsAboveMin,
     },
     // Slightly below max, should be slightly less.
     [viewPorts[4]]: {
-      text:
-        textSize -
-        (textSize - textSize / defaults.scalingRatioFont) *
-          scale50PixelsBelowMax,
+      text: textSize - (textSize - textSize / defaults.scalingRatioFont) * scale50PixelsBelowMax,
       element:
-        elementSize -
-        (elementSize - elementSize / defaults.scalingRatio) *
-          scale50PixelsBelowMax,
+        elementSize - (elementSize - elementSize / defaults.scalingRatio) * scale50PixelsBelowMax,
     },
     // Above max, should be same as max.
     [viewPorts[5]]: {
@@ -205,8 +177,7 @@ suite('Viewports can be modified', () => {
     // Exactly in between.
     [viewPorts[6]]: {
       text: textSize - (textSize - textSize / defaults.scalingRatioFont) * 0.5,
-      element:
-        elementSize - (elementSize - elementSize / defaults.scalingRatio) * 0.5,
+      element: elementSize - (elementSize - elementSize / defaults.scalingRatio) * 0.5,
     },
   }
 
@@ -242,14 +213,8 @@ $wasser-viewport-max: ${adaptedViewports.max};
       viewPorts.forEach((viewPort) => {
         const result = results[viewPort]
 
-        expect(result.regularTextFontSize).toBeCloseTo(
-          expectedResults[viewPort].text,
-          1
-        )
-        expect(result.divElementHeight).toBeCloseTo(
-          expectedResults[viewPort].element,
-          1
-        )
+        expect(result.regularTextFontSize).toBeCloseTo(expectedResults[viewPort].text, 1)
+        expect(result.divElementHeight).toBeCloseTo(expectedResults[viewPort].element, 1)
       })
     },
     evaluateConfiguration: defaultEvaluateConfiguration(viewPorts),
@@ -264,9 +229,7 @@ suite('Scaling ratios can be modified', () => {
 
   // Pixels between min and max viewport.
   const viewPortDifference = defaults.viewportMax - defaults.viewportMin
-  const viewportMiddle = Math.floor(
-    defaults.viewportMin + viewPortDifference / 2
-  )
+  const viewportMiddle = Math.floor(defaults.viewportMin + viewPortDifference / 2)
 
   const viewPorts = [
     defaults.viewportMin,
@@ -300,25 +263,17 @@ suite('Scaling ratios can be modified', () => {
     },
     // Slightly above min, should be slightly more.
     [viewPorts[3]]: {
-      text:
-        textSize -
-        (textSize - textSize / adaptedScalingRatios.font) *
-          scale50PixelsAboveMin,
+      text: textSize - (textSize - textSize / adaptedScalingRatios.font) * scale50PixelsAboveMin,
       element:
         elementSize -
-        (elementSize - elementSize / adaptedScalingRatios.regular) *
-          scale50PixelsAboveMin,
+        (elementSize - elementSize / adaptedScalingRatios.regular) * scale50PixelsAboveMin,
     },
     // Slightly below max, should be slightly less.
     [viewPorts[4]]: {
-      text:
-        textSize -
-        (textSize - textSize / adaptedScalingRatios.font) *
-          scale50PixelsBelowMax,
+      text: textSize - (textSize - textSize / adaptedScalingRatios.font) * scale50PixelsBelowMax,
       element:
         elementSize -
-        (elementSize - elementSize / adaptedScalingRatios.regular) *
-          scale50PixelsBelowMax,
+        (elementSize - elementSize / adaptedScalingRatios.regular) * scale50PixelsBelowMax,
     },
     // Above max, should be same as max.
     [viewPorts[5]]: {
@@ -328,9 +283,7 @@ suite('Scaling ratios can be modified', () => {
     // Exactly in between.
     [viewPorts[6]]: {
       text: textSize - (textSize - textSize / adaptedScalingRatios.font) * 0.5,
-      element:
-        elementSize -
-        (elementSize - elementSize / adaptedScalingRatios.regular) * 0.5,
+      element: elementSize - (elementSize - elementSize / adaptedScalingRatios.regular) * 0.5,
     },
   }
 
@@ -366,14 +319,8 @@ $wasser-scaling-ratio-font: ${adaptedScalingRatios.font};
       viewPorts.forEach((viewPort) => {
         const result = results[viewPort]
 
-        expect(result.regularTextFontSize).toBeCloseTo(
-          expectedResults[viewPort].text,
-          1
-        )
-        expect(result.divElementHeight).toBeCloseTo(
-          expectedResults[viewPort].element,
-          1
-        )
+        expect(result.regularTextFontSize).toBeCloseTo(expectedResults[viewPort].text, 1)
+        expect(result.divElementHeight).toBeCloseTo(expectedResults[viewPort].element, 1)
       })
     },
     evaluateConfiguration: defaultEvaluateConfiguration(viewPorts),

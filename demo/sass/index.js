@@ -12,15 +12,15 @@ setWidth()
 
 // Watches and displays attributes.
 let nodes
-const getNodes = () => nodes = document.querySelectorAll('[data-visualize]')
+const getNodes = () => (nodes = document.querySelectorAll('[data-visualize]'))
 
-const forEachNode = task => {
+const forEachNode = (task) => {
   for (let index = 0; index < nodes.length; index++) {
     task(nodes[index])
   }
 }
 
-const checkAttributes = node => {
+const checkAttributes = (node) => {
   const attributes = node.getAttribute('data-visualize').split(',')
   const computedValues = window.getComputedStyle(node)
   node.__wasserDisplayNode.innerHTML = ''
@@ -31,7 +31,7 @@ const checkAttributes = node => {
   })
 }
 
-const addDisplayNode = node => {
+const addDisplayNode = (node) => {
   const paragraphElement = document.createElement('p')
   paragraphElement.className = 'wasser-values'
   const textNode = document.createTextNode('')

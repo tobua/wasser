@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "papua": "^3.0.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "papua": "^5.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

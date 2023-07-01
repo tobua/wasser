@@ -7,6 +7,9 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - run: npm install
@@ -14,7 +17,8 @@ jobs:
         run: npm test
       - name: 🚧 Build
         run: npm run build
+      - run: npm install -g npm@latest
       - name: 📢 Release
-        uses: tobua/release-npm-action@v1
+        uses: tobua/release-npm-action@v2
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

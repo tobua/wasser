@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.8.1",
     "exmpl": "^3.0.0",
-    "node-sass": "^8.0.0",
-    "papua": "3.0.1",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1"
+    "node-sass": "^9.0.0",
+    "papua": "5.3.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3"
   },
   "localDependencies": {
     "wasser": "../.."
