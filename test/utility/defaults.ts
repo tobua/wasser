@@ -15,11 +15,11 @@ export const defaultEvaluateConfiguration = (viewPorts) => ({
   widths: viewPorts,
   // Executed inside puppeteer, will only return results.
   selector: () => {
-    const regularTextStyle = window.getComputedStyle(document.getElementById('text'))
-    const divElementStyle = window.getComputedStyle(document.getElementById('element'))
+    const regularTextStyle = window.getComputedStyle(document.getElementById('text') as Element)
+    const divElementStyle = window.getComputedStyle(document.getElementById('element') as Element)
     return {
-      regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
-      divElementHeight: parseFloat(divElementStyle.height, 10),
+      regularTextFontSize: parseFloat(regularTextStyle.fontSize),
+      divElementHeight: parseFloat(divElementStyle.height),
     }
   },
 })

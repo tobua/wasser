@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $wasser-viewport-min: 320 !default;
 $wasser-viewport-max: 1500 !default;
 $wasser-scaling-ratio: 1.5 !default;
@@ -13,7 +15,7 @@ $wasser-font-size-to-line-height-ratio: $wasser-scaling-ratio !default;
  * @param {number} $max — The max value for the property
  * @param {number|string} [$min] - The min value ot the property
  */
-@mixin wasser($property, $max, $min: $max / $wasser-scaling-ratio) {
+@mixin wasser($property, $max, $min: math.div($max, $wasser-scaling-ratio)) {
   @if type-of($max) != number {
     @error 'wasser: A number is expected as the second parameter.';
   }
@@ -32,7 +34,7 @@ $wasser-font-size-to-line-height-ratio: $wasser-scaling-ratio !default;
  */
 @mixin w-font(
   $max,
-  $min: ($max / $wasser-scaling-ratio-font),
+  $min: math.div($max, $wasser-scaling-ratio-font),
   $line-height-ratio: $wasser-font-size-to-line-height-ratio
 ) {
   @if type-of($max) != number {

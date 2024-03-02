@@ -1,5 +1,9 @@
 node_modules
 package-lock.json
+bun.lockb
 test/manual/dist
-jsconfig.json
+test-results
+docs/*/**/*.css
+tsconfig.json
+!test/tsconfig.json
 dist

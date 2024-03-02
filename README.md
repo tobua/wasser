@@ -11,6 +11,9 @@
 
 Create highly responsive and still pixel-perfect websites.
 
+> [!TIP]
+> A successor JavaScript-only library called [optica](https://github.com/tobua/optica) has been released. It requires the [`clamp()`](https://caniuse.com/css-math-functions) CSS math function but no longer needs any breakpoints.
+
 ## Use Cases
 
 Best suited when you have a desktop and a mobile design of the site. Wasser will
@@ -53,7 +56,7 @@ render(
   <Wrapper>
     <Heading>Scalable Properties</Heading>
   </Wrapper>,
-  document.body
+  document.body,
 )
 ```
 

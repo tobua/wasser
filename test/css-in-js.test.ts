@@ -1,3 +1,4 @@
+import { test, expect } from '@playwright/test'
 import { evaluate } from './utility/evaluate'
 import { defaults } from './utility/defaults'
 import { wasser, font, head, configure } from '../index'
@@ -5,7 +6,7 @@ import { wasser, font, head, configure } from '../index'
 const twoElementBody = `<p id="regular-text" class="text">Hello world</p>
 <div id="div-element" class="element">Here we are</div>`
 
-test('Has possible values on viewport somewhre between min and max.', async () => {
+test('Has possible values on viewport somewhre between min and max.', async ({ page }) => {
   const styles = `.text {
     color: blue;
     ${font(30)}
@@ -21,19 +22,20 @@ test('Has possible values on viewport somewhre between min and max.', async () =
     widths: [1000],
     // Executed inside puppeteer, will only return results.
     selector: function Selector() {
-      const regularText = document.querySelector('#regular-text')
+      const regularText = document.querySelector('#regular-text') as Element
       const regularTextStyle = window.getComputedStyle(regularText)
-      const divElement = document.querySelector('#div-element')
+      const divElement = document.querySelector('#div-element') as Element
       const divElementStyle = window.getComputedStyle(divElement)
       return {
         width: document.documentElement.clientWidth,
         regularTextColor: regularTextStyle.color,
-        regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
-        regularTextLineHeight: parseFloat(regularTextStyle.lineHeight, 10),
+        regularTextFontSize: parseFloat(regularTextStyle.fontSize),
+        regularTextLineHeight: parseFloat(regularTextStyle.lineHeight),
         divElementColor: divElementStyle.color,
-        divElementHeight: parseFloat(divElementStyle.height, 10),
+        divElementHeight: parseFloat(divElementStyle.height),
       }
     },
+    page,
   })
 
   const {
@@ -56,7 +58,7 @@ test('Has possible values on viewport somewhre between min and max.', async () =
   expect(divElementHeight).toBeLessThan(50)
 })
 
-test('Max and min values reached on maximum viewport.', async () => {
+test('Max and min values reached on maximum viewport.', async ({ page }) => {
   const styles = `.text {
     color: blue;
     ${font(30)}
@@ -72,13 +74,18 @@ test('Max and min values reached on maximum viewport.', async () => {
     widths: [defaults.viewportMin, defaults.viewportMax],
     // Executed inside puppeteer, will only return results.
     selector: () => {
-      const regularTextStyle = window.getComputedStyle(document.querySelector('#regular-text'))
-      const divElementStyle = window.getComputedStyle(document.querySelector('#div-element'))
+      const regularTextStyle = window.getComputedStyle(
+        document.querySelector('#regular-text') as Element,
+      )
+      const divElementStyle = window.getComputedStyle(
+        document.querySelector('#div-element') as Element,
+      )
       return {
-        regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
-        divElementHeight: parseFloat(divElementStyle.height, 10),
+        regularTextFontSize: parseFloat(regularTextStyle.fontSize),
+        divElementHeight: parseFloat(divElementStyle.height),
       }
     },
+    page,
   })
 
   const minResult = results[defaults.viewportMin]
@@ -91,7 +98,7 @@ test('Max and min values reached on maximum viewport.', async () => {
   expect(maxResult.divElementHeight).toEqual(40)
 })
 
-test('Ratios can be configured.', async () => {
+test('Ratios can be configured.', async ({ page }) => {
   configure({
     scalingRatio: 2,
     scalingRatioFont: 3,
@@ -112,20 +119,25 @@ test('Ratios can be configured.', async () => {
     widths: [defaults.viewportMin, 910, defaults.viewportMax],
     // Executed inside puppeteer, will only return results.
     selector: () => {
-      const regularTextStyle = window.getComputedStyle(document.querySelector('#regular-text'))
-      const divElementStyle = window.getComputedStyle(document.querySelector('#div-element'))
+      const regularTextStyle = window.getComputedStyle(
+        document.querySelector('#regular-text') as Element,
+      )
+      const divElementStyle = window.getComputedStyle(
+        document.querySelector('#div-element') as Element,
+      )
       return {
-        regularTextFontSize: parseFloat(regularTextStyle.fontSize, 10),
-        divElementHeight: parseFloat(divElementStyle.height, 10),
+        regularTextFontSize: parseFloat(regularTextStyle.fontSize),
+        divElementHeight: parseFloat(divElementStyle.height),
       }
     },
+    page,
   })
 
   const minResult = results[defaults.viewportMin]
   const betweenResults = results['910']
   const maxResult = results[defaults.viewportMax]
 
-  expect(minResult.regularTextFontSize).toEqual(30 / 3, 1)
+  expect(minResult.regularTextFontSize).toEqual(30 / 3)
   expect(minResult.divElementHeight).toBeCloseTo(40 / 2, 1)
 
   expect(betweenResults.regularTextFontSize).toBeGreaterThan(30 / 3 + 2)

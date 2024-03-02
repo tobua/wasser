@@ -6,12 +6,14 @@ const variables = {
   fontSizeToLineHeightRatio: 1.25,
 }
 
-export const configure = (configuration) => Object.assign(variables, configuration)
+export const configure = (configuration: Partial<typeof variables>) => {
+  Object.assign(variables, configuration)
+}
 
 // Round number to three digits and remove zeros.
-const round = (value) => parseFloat(value.toFixed(3))
+const round = (value: number) => parseFloat(value.toFixed(3))
 
-const calculation = (_max, _min) => {
+const calculation = (_max: number, _min: number) => {
   const max = round(_max)
   const min = round(_min)
   const minReached = `${min}px * var(--min)`
@@ -65,7 +67,7 @@ export const globalVariables = () => ({
   },
 })
 
-export const wasser = (max, min = max / variables.scalingRatio) => {
+export const wasser = (max: number, min = max / variables.scalingRatio) => {
   const errorMessage = (place) =>
     `wasser: A number is expected as the ${place} parameter for wasser(max: number, min: number).`
 
@@ -81,9 +83,9 @@ export const wasser = (max, min = max / variables.scalingRatio) => {
 }
 
 export const font = (
-  max,
+  max: number,
   min = max / variables.scalingRatioFont,
-  lineHeightRaio = variables.fontSizeToLineHeightRatio
+  lineHeightRaio = variables.fontSizeToLineHeightRatio,
 ) => {
   if (typeof max !== 'number' || typeof min !== 'number') {
     throw new Error('wasser font(): A number is expected as the first and second parameter.')
@@ -94,9 +96,9 @@ line-height: ${calculation(max * lineHeightRaio, min * lineHeightRaio)};`
 }
 
 export const fontObject = (
-  max,
+  max: number,
   min = max / variables.scalingRatioFont,
-  lineHeightRaio = variables.fontSizeToLineHeightRatio
+  lineHeightRaio = variables.fontSizeToLineHeightRatio,
 ) => {
   if (typeof max !== 'number' || typeof min !== 'number') {
     throw new Error('wasser fontObject(): A number is expected as the first and second parameter.')

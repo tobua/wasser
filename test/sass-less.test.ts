@@ -1,23 +1,26 @@
+import { test, expect } from '@playwright/test'
 import { evaluate, renderSass, renderLess } from './utility/evaluate'
 import { defaults, defaultEvaluateConfiguration } from './utility/defaults'
 
 // Run same test for SASS and LESS
-const suite = (name, getContext) => {
+const suite = (name: string, getContext: Function) => {
   const context = getContext()
 
-  test(`${name} for sass.`, async () => {
+  test(`${name} for sass.`, async ({ page }) => {
     const results = await evaluate({
       ...context.evaluateConfiguration,
       styles: [renderSass(context.sass)],
+      page,
     })
 
     context.test(results)
   })
 
-  test(`${name} for less.`, async () => {
+  test(`${name} for less.`, async ({ page }) => {
     const results = await evaluate({
       ...context.evaluateConfiguration,
       styles: [await renderLess(context.less)],
+      page,
     })
 
     context.test(results)

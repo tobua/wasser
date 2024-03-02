@@ -9,27 +9,30 @@
   "scripts": {
     "build": "padua build",
     "build:less": "lessc docs/less/less.less docs/less/less.css",
-    "build:sass": "node-sass docs --output docs --recursive",
-    "start": "padua watch",
-    "start:less": "npm run build:less & open docs/less/less.html",
-    "start:sass": "npm run build:sass && open docs/index.html",
-    "test": "padua test",
-    "watch": "npm run build && node-sass demo --output docs --watch --recursive"
+    "build:sass": "sass --no-source-map docs:docs",
+    "docs": "open docs/index.html",
+    "test": "playwright test --config test/playwright.config.ts"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/async": "^3.2.24",
+    "@types/bun": "^1.0.8",
+    "@types/less": "^3.0.6",
     "async": "^3.2.5",
-    "jest-puppeteer": "^9.0.2",
     "less": "^4.2.0",
-    "node-sass": "^9.0.0",
-    "padua": "2.0.8",
-    "puppeteer": "^21.7.0"
+    "padua": "3.0.0",
+    "playwright": "^1.42.1",
+    "sass": "^1.71.1"
   },
+  "trustedDependencies": [
+    "padua"
+  ],
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
     "./wasser": {
@@ -39,12 +42,9 @@
       "default": "./wasser.less"
     }
   },
-  "source": "./index.js",
-  "types": "./index.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "index.js",
-    "index.d.ts",
     "_wasser.scss",
     "wasser.less"
   ],
@@ -57,24 +57,7 @@
   ],
   "prettier": "padua/configuration/.prettierrc.json",
   "eslintConfig": {
-    "extends": "./node_modules/padua/configuration/eslint.cjs",
-    "globals": {
-      "browser": true,
-      "context": true,
-      "jestPuppeteer": true,
-      "page": true
-    }
-  },
-  "jest": {
-    "preset": "jest-puppeteer",
-    "transform": {
-      "^.+\\.jsx?$": [
-        "babel-jest",
-        {
-          "configFile": "./node_modules/padua/configuration/.babelrc"
-        }
-      ]
-    }
+    "extends": "./node_modules/padua/configuration/eslint.cjs"
   },
   "publishConfig": {
     "provenance": true
